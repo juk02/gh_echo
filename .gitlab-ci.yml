@@ -28,7 +28,7 @@ build-job:       # This job runs in the build stage, which runs first.
       - build/libs/*.jar
   script:
     - echo "Compiling the code..."
-    - ./gradlew clean build
+    - gradle clean build
     - echo "Compile complete.."
 
 unit-test-job:   # This job runs in the test stage.
