@@ -17,7 +17,7 @@
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
 stages:          # List of stages for jobs, and their order of execution
-  - print
+  # - print
   - build
   - test
   - deploy
@@ -31,15 +31,16 @@ print:
 build-job:       # This job runs in the build stage, which runs first.
   image: gradle:8.5-jdk17
   stage: build
-  cache:
-    paths:
-      - .gradle/wrapper
-      - .gradle/caches
+  # cache:
+  #   paths:
+  #     - .gradle/wrapper
+  #     - .gradle/caches
   artifacts:
     paths:
       - build/libs/*.jar
   script:
     - echo "Compiling the code..."
+    - cd > pwd.txt
     - gradle clean build
     - echo "Compile complete.."
 
