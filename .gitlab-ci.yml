@@ -22,11 +22,11 @@ stages:          # List of stages for jobs, and their order of execution
   - test
   - deploy
 
-print:
-  stage: print
-  script:
-    - cd > pwd.txt
-    - echo "Hello"
+# print:
+#   stage: print
+#   script:
+#     - cd > pwd.txt
+#     - echo "Hello"
 
 build-job:       # This job runs in the build stage, which runs first.
   image: gradle:8.5-jdk17
