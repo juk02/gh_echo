@@ -22,7 +22,12 @@ stages:          # List of stages for jobs, and their order of execution
   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
+  image: gradle:8.5-jdk17
   stage: build
+  cache:
+    paths:
+      - .gradle/wrapper
+      - .gradle/caches
   artifacts:
     paths:
       - build/libs/*.jar
@@ -42,7 +47,7 @@ lint-test-job:   # This job also runs in the test stage.
   stage: test    # It can run at the same time as unit-test-job (in parallel).
   script:
     - echo "Linting code... This will take about 10 seconds."
-    - sleep 11
+    - sleep 1
     - echo "No lint issues found."
 
 deploy-job:      # This job runs in the deploy stage.
