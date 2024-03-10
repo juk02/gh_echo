@@ -42,7 +42,7 @@ build-job:       # This job runs in the build stage, which runs first.
     - echo "Compiling the code..."
     - cd > pwd.txt
     # - gradle clean build
-    - gradle build
+    - ./gradlew build
     - echo "Compile complete.."
 
 unit-test-job:   # This job runs in the test stage.
