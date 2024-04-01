@@ -40,7 +40,7 @@ build-job:       # This job runs in the build stage, which runs first.
       - build/libs/*.jar
   script:
     - echo "Compiling the code..."
-    - cd > pwd.txt
+    # - cd > pwd.txt
     # - gradle clean build
     - ./gradlew build
     - echo "Compile complete.."
