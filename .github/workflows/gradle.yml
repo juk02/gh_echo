@@ -47,6 +47,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
+        file: ./DockerFile
         push: true
         tags: ${{ vars.REGISTRY }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
